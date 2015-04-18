@@ -9,6 +9,8 @@ RUN apt-get update && \
     apt-get -fy install && \
     rm -rf /tmp/*
 
+COPY ghr /usr/bin/
+
 WORKDIR /data
 
 CMD ["bash"]
