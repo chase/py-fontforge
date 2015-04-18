@@ -11,6 +11,8 @@ RUN apt-get update && \
 
 COPY ghr /usr/bin/
 
+RUN apt-get -y install ca-certificates openssl
+
 WORKDIR /data
 
 CMD ["bash"]
