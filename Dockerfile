@@ -4,14 +4,11 @@ COPY *.deb /tmp/
 
 RUN apt-get update && \
     dpkg -i /tmp/libfontforge1-trusty_amd64.deb || \
-    apt-get -fy install && \
     dpkg -i /tmp/python-fontforge-trusty_amd64.deb || \
     apt-get -fy install && \
     rm -rf /tmp/*
 
-COPY ghr /usr/bin/
-
-RUN apt-get -y install ca-certificates openssl
+RUN apt-get -y install ca-certificates openssl zip
 
 WORKDIR /data
 
